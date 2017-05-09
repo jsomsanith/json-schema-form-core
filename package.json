@@ -1,9 +1,10 @@
 {
-  "name": "json-schema-form-core",
+  "name": "talend-json-schema-form-core",
   "version": "1.0.0-alpha.2",
   "description": "JSON-Schema and JSON-UI-Schema utilities for form generation.",
-  "main": "dist/json-schema-form-core.js",
+  "main": "dist/module.js",
   "scripts": {
+    "prepublish": "babel -d dist ./src/ && rimraf dist/**/*.spec.js",
     "build": "webpack",
     "watch": "webpack --watch",
     "dist-untested": "webpack --config webpack.config.dist.js",
@@ -33,7 +34,7 @@
   },
   "keywords": [
     "angular-schema-form",
-    "json-schema-form-core",
+    "talend-json-schema-form-core",
     "json-schema-form",
     "json-ui-schema",
     "json-schema"
@@ -42,6 +43,8 @@
     "@types/chai": "^3.4.34",
     "@types/mocha": "^2.2.33",
     "@types/node": "^6.0.42",
+    "babel": "^6.23.0",
+    "babel-cli": "^6.24.1",
     "babel-core": "^6.18.2",
     "babel-loader": "^6.2.9",
     "babel-plugin-syntax-async-functions": "^6.13.0",
@@ -64,14 +67,17 @@
     "karma-webpack": "^1.8.1",
     "mocha": "^3.2.0",
     "objectpath": "^1.2.1",
+    "rimraf": "^2.6.1",
     "sinon": "^1.17.7",
     "sinon-chai": "^2.8.0",
     "ts-loader": "^1.2.2",
     "ts-node": "^1.2.1",
     "tslint": "^4.0.2",
     "tslint-loader": "^3.2.1",
-    "tv4": "^1.2.7",
     "typescript": "~2.0.3",
     "webpack": "^2.2.1"
+  },
+  "dependencies": {
+    "tv4": "^1.3.0"
   }
 }
