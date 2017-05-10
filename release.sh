@@ -33,11 +33,13 @@ git co tags/$TAG_NAME
 git co -b release/$TAG_NAME
 
 echo '###############################################################################'
-echo '# Install missing deps (babel, babel-cli, rimraf, tv4)'
+echo '# Install missing deps (babel, babel-cli, rimraf, tv4, objectpath)'
 echo '###############################################################################'
 yarn add --dev babel babel-cli rimraf
 yarn remove tv4
 yarn add tv4
+yarn remove objectpath
+yarn add objectpath
 
 echo '###############################################################################'
 echo '# Remove old dist'
