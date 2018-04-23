@@ -54,7 +54,7 @@ echo '# 3. change main file json-schema-form-core.js --> module.js'
 echo '###############################################################################'
 # replace package name, add prepublish based on babel, change main file
 sed -i -e 's/\"json-schema-form-core\"/\"talend-json-schema-form-core\"/g' package.json
-sed -i -e 's/"scripts": {/"scripts": {\n    "prepublish": "babel -d dist .\/src\/ \&\& rimraf dist\/**\/*.spec.js",/g' package.json
+lf=$'\n'; sed -i -e "s/\"scripts\": {/\"scripts\": {\\$lf    \"prepublish\": \"babel -d dist .\/src\/ \&\& rimraf dist\/**\/*.spec.js\",/g" package.json
 sed -i -e 's/dist\/json-schema-form-core.js/dist\/module.js/g' package.json
 
 echo '###############################################################################'
